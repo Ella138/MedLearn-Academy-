@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MedLearn Academy: a student-led educational anatomy and biology learning website.">
+  <title>MedLearn Academy | Learn the Human Body</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Three.js library for the 3D anatomy laboratory -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <a class="brand" href="#home">
+      <span class="brand-mark">✚</span>
+      <span>MedLearn <b>Academy</b></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+
+    <nav id="mainNav">
+      <a href="#anatomy">Anatomy</a>
+      <a href="#laboratory">3D Lab</a>
+      <a href="#flashcards">Flashcards</a>
+      <a href="#quiz">Quizzes</a>
+      <a href="#research">Research</a>
+      <a href="#progress">Progress</a>
+      <a href="#founder">About</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HOMEPAGE -->
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">STUDENT-LED • SCIENCE • DISCOVERY</p>
+
+        <h1>
+          Understand the human body.
+          <span>One discovery at a time.</span>
+        </h1>
+
+        <p>
+          Explore body systems, practise what you learn, and build your
+          curiosity about medicine through interactive study tools.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#anatomy">Explore anatomy</a>
+          <a class="button secondary" href="#quiz">Try a quiz</a>
+        </div>
+
+        <p class="small-note">
+          An educational project for learning — not a medical advice service.
+        </p>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="hero-cross">✚</div>
+        <div class="hero-label label-top">LEARN</div>
+        <div class="hero-label label-bottom">DISCOVER</div>
+      </div>
+    </section>
+
+
+    <!-- INTERACTIVE ANATOMY DIAGRAM -->
+    <section class="section" id="anatomy">
+      <div class="section-heading">
+        <p class="eyebrow">01 / EXPLORE</p>
+        <h2>Interactive anatomy map</h2>
+        <p>
+          Select an organ on the diagram or choose a label to learn
+          its main function.
+        </p>
+      </div>
+
+      <div class="anatomy-layout">
+
+        <div class="diagram-card">
+          <div class="diagram-top">
+            <span>HUMAN BODY OVERVIEW</span>
+            <span class="live-dot">● EDUCATIONAL SCHEMATIC</span>
+          </div>
+
+          <svg class="body-diagram" viewBox="0 0 520 650"
+               role="img" aria-label="Schematic human body with clickable organs">
+
+            <g class="silhouette">
+              <circle cx="260" cy="75" r="48"/>
+              <path d="M230 126 L290 126 L310 155 L350 170
+              L385 310 L345 322 L325 230 L322 365 L198 365
+              L195 230 L175 322 L135 310 L170 170 L210 155 Z"/>
+
+              <path d="M205 360 L255 360 L245 545 L210 545 Z
+              M265 360 L315 360 L310 545 L275 545 Z"/>
+
+              <path d="M210 540 L245 540 L245 565 L195 565 Z
+              M275 540 L310 540 L325 565 L275 565 Z"/>
+            </g>
+
+            <g class="organ brain" data-organ="brain"
+               tabindex="0" role="button" aria-label="Brain">
+              <ellipse cx="260" cy="76" rx="28" ry="25"/>
+              <path d="M260 52 V100 M240 67 Q250 58 258 69
+              M262 83 Q276 92 281 76"/>
+            </g>
+
+            <g class="organ lungs" data-organ="lungs"
+               tabindex="0" role="button" aria-label="Lungs">
+              <path d="M250 168 C218 146 205 177 210 229
+              Q216 254 248 239 Z
+              M270 168 C302 146 315 177 310 229
+              Q304 254 272 239 Z"/>
+            </g>
+
+            <g class="organ heart" data-organ="heart"
+               tabindex="0" role="button" aria-label="Heart">
+              <path d="M260 190 C242 170 220 190 235 211
+              L260 235 L285 211 C300 190 278 170 260 190Z"/>
+            </g>
+
+            <g class="organ liver" data-organ="liver"
+               tabindex="0" role="button" aria-label="Liver">
+              <path d="M211 258 Q240 241 265 258
+              Q282 277 260 292 L218 288
+              Q202 279 211 258Z"/>
+            </g>
+
+            <g class="organ stomach" data-organ="stomach"
+               tabindex="0" role="button" aria-label="Stomach">
+              <path d="M283 255 Q304 250 300 274
+              Q294 300 274 302 Q260 292 271 277
+              Q281 268 283 255Z"/>
+            </g>
+
+            <g class="organ kidneys" data-organ="kidneys"
+               tabindex="0" role="button" aria-label="Kidneys">
+              <path d="M224 315 Q205 302 203 325
+              Q205 347 226 339 Q237 331 224 315Z
+              M296 315 Q315 302 317 325
+              Q315 347 294 339 Q283 331 296 315Z"/>
+            </g>
+
+            <g class="diagram-labels">
+              <text x="310" y="78">Brain</text>
+              <text x="326" y="188">Lungs</text>
+              <text x="300" y="218">Heart</text>
+              <text x="105" y="270">Liver</text>
+              <text x="330" y="278">Stomach</text>
+              <text x="325" y="337">Kidneys</text>
+            </g>
+          </svg>
+
+          <p class="tiny">
+            Simplified educational illustration. Organ positions and shapes
+            are not to scale.
+          </p>
+        </div>
+
+        <aside class="info-card" aria-live="polite">
+          <span class="tag">ORGAN SPOTLIGHT</span>
+          <h3 id="organTitle">Choose an organ</h3>
+
+          <p id="organDescription">
+            Select one of the coloured organs in the diagram or use the
+            buttons below.
+          </p>
+
+          <div class="organ-buttons" id="organButtons"></div>
+        </aside>
+
+      </div>
+    </section>
+
+
+    <!-- 3D ANATOMY LAB -->
+    <section class="section dark-section" id="laboratory">
+      <div class="section-heading">
+        <p class="eyebrow">02 / EXPERIMENT</p>
+        <h2>3D anatomy laboratory</h2>
+        <p>
+          Explore a simplified 3D body model. Drag to rotate and use
+          the controls to pause or reset the view.
+        </p>
+      </div>
+
+      <div class="lab-layout">
+
+        <div class="viewer-wrap">
+          <div id="anatomyCanvas"
+               aria-label="Interactive simplified 3D human model"></div>
+
+          <div class="viewer-controls">
+            <button class="button secondary" id="rotateButton">
+              Pause rotation
+            </button>
+
+            <button class="button secondary" id="resetView">
+              Reset view
+            </button>
+          </div>
+        </div>
+
+        <div class="lab-info">
+          <span class="tag">3D EXPLORER</span>
+          <h3 id="labOrganTitle">Human body model</h3>
+
+          <p id="labOrganText">
+            Choose an organ to highlight it. You can also drag the model
+            to view it from different angles.
+          </p>
+
+          <div class="organ-buttons" id="labButtons"></div>
+
+          <p class="tiny">
+            The model uses simplified geometric shapes and is not
+            anatomically or clinically accurate.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FLASHCARDS -->
+    <section class="section" id="flashcards">
+      <div class="section-heading">
+        <p class="eyebrow">03 / REMEMBER</p>
+        <h2>Medical flashcards</h2>
+        <p>
+          Test your recall with short anatomy and biology prompts.
+        </p>
+      </div>
+
+      <div class="flashcard-area">
+
+        <div class="flashcard" id="flashcard" tabindex="0"
+             role="button" aria-label="Flashcard. Select to reveal the answer.">
+
+          <span class="tag" id="flashcardTag">ANATOMY</span>
+
+          <h3 id="flashcardText">
+            Which organ pumps blood around the body?
+          </h3>
+
+          <p id="flashcardHint">
+            Select the card to reveal the answer.
+          </p>
+        </div>
+
+        <div class="flash-controls">
+          <button class="button secondary" id="previousCard">Previous</button>
+          <button class="button primary" id="flipCard">Reveal answer</button>
+          <button class="button secondary" id="nextCard">Next</button>
+          <button class="button secondary" id="shuffleCards">Shuffle</button>
+        </div>
+
+        <p class="tiny" id="cardCount">Card 1 of 8</p>
+      </div>
+    </section>
+
+
+    <!-- QUIZ -->
+    <section class="section quiz-section" id="quiz">
+      <div class="section-heading">
+        <p class="eyebrow">04 / PRACTISE</p>
+        <h2>Knowledge check</h2>
+        <p>
+          Answer the questions and check your understanding.
+        </p>
+      </div>
+
+      <div class="quiz-card">
+
+        <div class="quiz-meta">
+          <span id="questionNumber">QUESTION 1 OF 5</span>
+          <span id="quizScore">Score: 0</span>
+        </div>
+
+        <div class="progress-track">
+          <div id="quizProgress"></div>
+        </div>
+
+        <h3 id="questionText">
+          Which organ pumps blood around the body?
+        </h3>
+
+        <div id="answerOptions" class="answer-options"></div>
+
+        <p id="quizFeedback" aria-live="polite"></p>
+
+        <div class="quiz-actions">
+          <button class="button primary" id="nextQuestion" disabled>
+            Next question
+          </button>
+
+          <button class="button secondary" id="restartQuiz">
+            Restart quiz
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- RESEARCH CORNER -->
+    <section class="section" id="research">
+      <div class="section-heading">
+        <p class="eyebrow">05 / INVESTIGATE</p>
+        <h2>Student research corner</h2>
+        <p>
+          Use this space to document your school-based Human Body Project
+          or a health-education survey.
+        </p>
+      </div>
+
+      <div class="research-layout">
+
+        <div class="research-card">
+          <span class="tag">PROJECT WORKSPACE</span>
+          <h3>My research notes</h3>
+
+          <label for="projectTitle">Project title</label>
+          <input id="projectTitle" type="text"
+                 placeholder="e.g. How well do students understand organ functions?">
+
+          <label for="projectQuestion">Research question</label>
+          <textarea id="projectQuestion" rows="3"
+                    placeholder="Write the question your project aims to investigate."></textarea>
+
+          <label for="projectMethod">Method / activities</label>
+          <textarea id="projectMethod" rows="4"
+                    placeholder="Describe your survey, participants, learning activities or observations."></textarea>
+
+          <label for="projectFindings">
+            Findings (enter only your actual results)
+          </label>
+          <textarea id="projectFindings" rows="4"
+                    placeholder="Add your real findings after collecting and reviewing data."></textarea>
+
+          <div class="button-row">
+            <button class="button primary" id="saveResearch">
+              Save notes on this device
+            </button>
+
+            <button class="button secondary" id="clearResearch">
+              Clear notes
+            </button>
+          </div>
+
+          <p id="researchStatus" class="status" aria-live="polite">
+            Your notes are not submitted anywhere.
+          </p>
+        </div>
+
+        <div class="research-guide">
+          <span class="tag">RESEARCH CHECKLIST</span>
+          <h3>Build a responsible project</h3>
+
+          <ul>
+            <li>Write one clear research question.</li>
+            <li>Ask a teacher to review your plan.</li>
+            <li>Explain the project and seek appropriate permission before surveying participants.</li>
+            <li>Do not collect names or private medical information.</li>
+            <li>Report the results honestly, including limitations.</li>
+            <li>Never invent data, citations or conclusions.</li>
+          </ul>
+
+          <p class="tiny">
+            For a school project, follow your school's research and
+            safeguarding rules. Keep participation voluntary and anonymous
+            where possible.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROGRESS TRACKER -->
+    <section class="section" id="progress">
+      <div class="section-heading">
+        <p class="eyebrow">06 / TRACK YOUR LEARNING</p>
+        <h2>My learning progress</h2>
+        <p>
+          Your activity is saved in this browser on this device.
+        </p>
+      </div>
+
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <span>QUIZZES COMPLETED</span>
+          <strong id="quizzesCompleted">0</strong>
+        </div>
+
+        <div class="stat-card">
+          <span>BEST QUIZ SCORE</span>
+          <strong id="bestScore">0/5</strong>
+        </div>
+
+        <div class="stat-card">
+          <span>TOPICS STUDIED</span>
+          <strong id="topicsStudied">0/6</strong>
+        </div>
+
+      </div>
+
+      <div class="progress-card">
+        <div class="progress-title">
+          <h3>Topics explored</h3>
+          <span id="topicCountLabel">0 of 6</span>
+        </div>
+
+        <div class="topic-list" id="topicList"></div>
+
+        <button class="button secondary" id="resetProgress">
+          Reset learning progress
+        </button>
+
+        <p class="tiny">
+          Progress is stored locally in your browser using local storage.
+          It is not an online account or cloud backup.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- FOUNDER PORTFOLIO -->
+    <section class="section founder-section" id="founder">
+
+      <div class="founder-mark">✚</div>
+
+      <div>
+        <p class="eyebrow">07 / THE STUDENT BEHIND THE PROJECT</p>
+        <h2>About the founder</h2>
+
+        <p>
+          MedLearn Academy is a student-led learning project created
+          to make human anatomy and health science more engaging,
+          accessible and enjoyable.
+        </p>
+
+        <p>
+          <b>Founder:</b>
+          <span id="founderName">Uchejigbo Emmanuela</span>
+        </p>
+
+        <p>
+          <b>Project mission:</b>
+          To learn, teach and encourage curiosity about the science
+          of the human body.
+        </p>
+
+        <p class="tiny">
+          
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <a class="brand" href="#home">
+      <span class="brand-mark">✚</span>
+      <span>MedLearn <b>Academy</b></span>
+    </a>
+
+    <p>Learn responsibly. Stay curious. Keep discovering.</p>
+
+    <p class="tiny">
+      Educational content only. Not a substitute for professional
+      medical advice, diagnosis or treatment.
+    </p>
+
+    <p class="tiny">
+      © <span id="year"></span> MedLearn Academy — student project.
+    </p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
